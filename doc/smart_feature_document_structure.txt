@@ -1,0 +1,53 @@
+#The format of the lines is like the following:
+#  database_name -> describtion
+#
+#the "database_name" identifier is the name in the database and is also used in the python class SMARTFeature 
+#"describtion" is a describtion text or an identifier refering to Higgins paper S.M.A.R.T
+#lines starting with the  #-character are comment lines
+
+
+#meta data
+index -> number of this feature on the HMI magnetogram
+time -> datetime of observation
+_id -> unique identifier for DB: time + "_"  index
+shape -> describes x,y,width,height of this feature on the magnetogram, in px
+class -> refers to the classification scheme in the paper
+
+#values refering to the paper
+#characterization feature arrays
+data_ -> B_t,i
+mask -> IGM_t,i
+contour -> points which describe the contour of the feature. points are measured in pixels from left-top corner of original image
+hg_longitude_map -> HG_t (Stonyhurst)
+hg_latitude_map -> HG_t
+area_map -> A_cos,t,i
+phi_map -> phi_t,i
+phi_delta -> (dphi/dt)_t,i
+
+#characterization property values
+position -> HG_pos,t,i
+max -> B_max,t,i
+min -> B_min,t,i
+sum -> B_tot,t,i
+abs_sum -> B_tot uns,t,i
+mean -> my
+variance-> sigma
+skewness -> gamma
+kurtosis -> kappa
+area -> A_tot,t,i
+phi_pos -> phi_+_t,i
+phi_neg -> phi_-,t,i
+phi_abs -> phi_uns,t,i
+phi_imb -> phi_imb_t,i
+phi_net_emrg -> (dphi/dt)_net,t,i
+
+
+#characterization feature arrays
+psl_mask -> M_PSL,t,i
+psl_thin_mask -> M_PSL,thin,t,i
+
+#characterization property values
+PSL_len -> L_PSL,t,i
+SG_len -> L_sg,t,i
+R_star -> R*_t,i
+WL_sg_star -> WL*_sg,t,i
